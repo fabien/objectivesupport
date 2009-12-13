@@ -6,9 +6,6 @@
 //  Copyright 2009 Burkaprojects. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
-
 @interface NSArray(JSONSerializableSupport)
 
 - (NSString *)toJSONAs:(NSString *)rootName excludingInArray:(NSArray *)exclusions

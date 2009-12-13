@@ -6,11 +6,11 @@
 //  Copyright 2008 yFactorial, LLC. All rights reserved.
 //
 
-@interface FromXMLElementDelegate : NSObject {
+@interface FromXMLElementDelegate : NSObject <NSXMLParserDelegate> {
 	Class targetClass;
-  id parsedObject;
+  	id parsedObject;
 	NSString *currentPropertyName;
-  NSMutableString *contentOfCurrentProperty;
+  	NSMutableString *contentOfCurrentProperty;
 	NSMutableArray *unclosedProperties;
 	NSString *currentPropertyType;
 }

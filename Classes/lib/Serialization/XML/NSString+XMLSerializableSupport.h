@@ -6,9 +6,6 @@
 //  Copyright 2009 Burkaprojects. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
-
 @interface NSString(XMLSerializableSupport) 
 
 + (NSString *)fromXmlString:(NSString *)aString;

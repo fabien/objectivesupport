@@ -6,9 +6,6 @@
 //  Copyright 2009 Burkaprojects. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
-
 @interface NSDictionary(KeyTranslation)
 
 + (NSString *)translationForKey:(NSString *)key withTranslations:(NSDictionary *)keyTranslations;

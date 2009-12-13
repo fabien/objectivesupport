@@ -1,5 +1,5 @@
 /*
- Copyright (C) 2007-2009 Stig Brautaset. All rights reserved.
+ Copyright (C) 2009 Stig Brautaset. All rights reserved.
  
  Redistribution and use in source and binary forms, with or without
  modification, are permitted provided that the following conditions are met:
@@ -27,29 +27,24 @@
  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import "NSString+SBJSON.h"
-#import "SBJsonParser.h"
+/**
+ @mainpage A strict JSON parser and generator for Objective-C
 
-@implementation NSString (NSString_SBJSON)
+ JSON (JavaScript Object Notation) is a lightweight data-interchange
+ format. This framework provides two apis for parsing and generating
+ JSON. One standard object-based and a higher level api consisting of
+ categories added to existing Objective-C classes.
 
-- (id)JSONFragmentValue
-{
-    SBJsonParser *jsonParser = [SBJsonParser new];    
-    id repr = [jsonParser fragmentWithString:self];    
-    if (!repr)
-        NSLog(@"-JSONFragmentValue failed. Error trace is: %@", [jsonParser errorTrace]);
-    [jsonParser release];
-    return repr;
-}
+ Learn more on the http://code.google.com/p/json-framework project site.
+ 
+ This framework does its best to be as strict as possible, both in what it
+ accepts and what it generates. For example, it does not support trailing commas
+ in arrays or objects. Nor does it support embedded comments, or
+ anything else not in the JSON specification. This is considered a feature. 
+ 
+*/
 
-- (id)JSONValue
-{
-    SBJsonParser *jsonParser = [SBJsonParser new];
-    id repr = [jsonParser objectWithString:self];
-    if (!repr)
-        NSLog(@"-JSONValue failed. Error trace is: %@", [jsonParser errorTrace]);
-    [jsonParser release];
-    return repr;
-}
+#import <JSON/SBJSON.h>
+#import <JSON/NSObject+SBJSON.h>
+#import <JSON/NSString+SBJSON.h>
 
-@end
